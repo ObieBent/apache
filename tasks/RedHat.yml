@@ -107,5 +107,5 @@
     - install
     - update_config
 
-- include: selinux.yml
+- include_tasks: selinux.yml
   when: ansible_selinux and ansible_selinux.status == "enabled"

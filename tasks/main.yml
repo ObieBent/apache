@@ -47,7 +47,7 @@
   tags:
     - create_vhosts
     - config
-  include: vhosts.yml vhost_options="{{ item.value }}" vhost_name="{{ item.value.vhost_name|default(item.key) }}"
+  include_tasks: vhosts.yml vhost_options="{{ item.value }}" vhost_name="{{ item.value.vhost_name|default(item.key) }}"
   with_dict: "{{ apache2_vhosts }}"
   when: apache2_vhosts|length > 0
 
